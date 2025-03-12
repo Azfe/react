@@ -1,18 +1,19 @@
 import { Fragment } from 'react';
 import imgFakoly from './assets/images/folder.jpg';
+
 import MyButton from './components/MyButton';
 import WelcomeText from './components/WelcomeText';
-import ItemFruit from './components/ItemFruit';
 import OnlineText from './components/OnlineText';
 import OfflineText from './components/OfflineText';
+import ListFruits from './components/fruits/ListFruits';
 
 const App = () => {
   const title = 'React is awesome!';
   const classTitle = 'text-center';
   //const pathImg = 'src/assets/images/folder.jpg';
-  const user = true;
-
   const fruits = ['🍌', '🍏', '🍓', '🥝', '🍋', '🍐'];
+  const fruits2 = ['🍊', '🥑', '🍒', '🍎', '🍍'];
+  const user = true;
 
   return (
     <Fragment>
@@ -27,13 +28,8 @@ const App = () => {
         user && <OnlineText/>
       }
 
-      <ul>
-        {
-          fruits.map((fruit, index) => (
-            <ItemFruit key={ index } fruit = { fruit }/>
-          ))
-        }
-      </ul>      
+      <ListFruits fruits={ fruits }/>           
+      <ListFruits fruits={ fruits2 }/>  
       
       <WelcomeText user={user}/>
       
