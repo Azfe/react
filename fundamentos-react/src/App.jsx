@@ -15,16 +15,22 @@ const OfflineText = () => {
   return (
     <p>Usuario no logueado</p>    
   ) 
-}
+};
 
-const title = 'React is awesome!';
-const classTitle = 'text-center';
-//const pathImg = 'src/assets/images/folder.jpg';
-const user = true;
+const WelcomeText = ({user}) => (user ? <p>Bienvenido usuario</p> : <p>Offline</p>);
 
-const fruits = ['🍌', '🍏', '🍓', '🥝', '🍋', '🍐'];
+const ItemFruit = (props) => {
+  return <li>{ props.fruit }</li>
+};
 
 const App = () => {
+  const title = 'React is awesome!';
+  const classTitle = 'text-center';
+  //const pathImg = 'src/assets/images/folder.jpg';
+  const user = true;
+
+  const fruits = ['🍌', '🍏', '🍓', '🥝', '🍋', '🍐'];
+
   return (
     <Fragment>
       <h1 className={ classTitle }>{ title.toUpperCase() }</h1>
@@ -37,13 +43,17 @@ const App = () => {
       {
         user && <OnlineText/>
       }
+
       <ul>
         {
-          fruits.map((fruit, index) => {
-            return <li key={ index }>{ index + 1 } - { fruit }</li>
-          })
+          fruits.map((fruit, index) => (
+            <ItemFruit key={ index } fruit = { fruit }/>
+          ))
         }
-      </ul>
+      </ul>      
+      
+      <WelcomeText user={user}/>
+      
 
     </Fragment>
   )
