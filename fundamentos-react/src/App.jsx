@@ -1,9 +1,18 @@
 import { Fragment } from 'react';
 import imgFakoly from './assets/images/folder.jpg';
 
-const MyButton = ({text}) => {
-  return <button>{ text }</button>
-}
+const MyButton = ({ text }) => {
+
+  const  handleClickButton = (title) => {
+    console.log('Handle Clicked!' + title);
+  }
+
+  return (
+    <button onClick={ () => handleClickButton(text) }>
+      { text }
+    </button>
+  );
+};
 
 const OnlineText = () => {
   return (
