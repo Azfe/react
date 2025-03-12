@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 import imgFakoly from './assets/images/folder.jpg';
 
-const MyButton = () => {
-  return <button>Click me!</button>
+const MyButton = ({text}) => {
+  return <button>{ text }</button>
 }
 
 const OnlineText = () => {
@@ -22,18 +22,29 @@ const classTitle = 'text-center';
 //const pathImg = 'src/assets/images/folder.jpg';
 const user = true;
 
+const fruits = ['🍌', '🍏', '🍓', '🥝', '🍋', '🍐'];
+
 const App = () => {
   return (
     <Fragment>
       <h1 className={ classTitle }>{ title.toUpperCase() }</h1>
       <img src={ imgFakoly } alt={`imagen: ${title}`} className="image"/>
-      <MyButton />
+      <MyButton text="Click me! 1" />
+      <MyButton text="Click me! 2"/>
       {
         user ? <OnlineText/> : <OfflineText/>
       }
       {
         user && <OnlineText/>
       }
+      <ul>
+        {
+          fruits.map((fruit, index) => {
+            return <li key={ index }>{ index + 1 } - { fruit }</li>
+          })
+        }
+      </ul>
+
     </Fragment>
   )
 }
