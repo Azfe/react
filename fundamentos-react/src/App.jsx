@@ -1,36 +1,10 @@
 import { Fragment } from 'react';
 import imgFakoly from './assets/images/folder.jpg';
-
-const MyButton = ({ text }) => {
-
-  const  handleClickButton = (title) => {
-    console.log('Handle Clicked!' + title);
-  }
-
-  return (
-    <button onClick={ () => handleClickButton(text) }>
-      { text }
-    </button>
-  );
-};
-
-const OnlineText = () => {
-  return (
-    <p>Usuario logueado</p>    
-  ) 
-}
-
-const OfflineText = () => {
-  return (
-    <p>Usuario no logueado</p>    
-  ) 
-};
-
-const WelcomeText = ({user}) => (user ? <p>Bienvenido usuario</p> : <p>Offline</p>);
-
-const ItemFruit = (props) => {
-  return <li>{ props.fruit }</li>
-};
+import MyButton from './components/MyButton';
+import WelcomeText from './components/WelcomeText';
+import ItemFruit from './components/ItemFruit';
+import OnlineText from './components/OnlineText';
+import OfflineText from './components/OfflineText';
 
 const App = () => {
   const title = 'React is awesome!';
