@@ -6,6 +6,7 @@ import WelcomeText from './components/WelcomeText';
 import OnlineText from './components/OnlineText';
 import OfflineText from './components/OfflineText';
 import ListFruits from './components/fruits/ListFruits';
+import ButtonState from './components/ButtonState';
 
 const App = () => {
   const title = 'React is awesome!';
@@ -32,6 +33,8 @@ const App = () => {
       <ListFruits fruits={ fruits2 }/>  
       
       <WelcomeText user={user}/>
+      
+      <ButtonState/>
       
 
     </Fragment>
