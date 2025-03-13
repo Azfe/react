@@ -1,7 +1,10 @@
+import NoControlado from "./components/NoControlado";
+
 const App = () => {
   return (
-    <div>
-      <h1>React Form</h1>
+    <div className="container">
+      <h1>Formularios</h1>
+      <NoControlado />
       
     </div>
   );
