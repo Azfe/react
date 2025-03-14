@@ -9,15 +9,20 @@ const Controlado = () => {
         state: 'pendiente'
     });
 
+    const {title, description, priority, state} = task;
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(task.title, description, state);
+        console.log(title, description, state);
     };
 
-    const handleChange = (e) => {
+    const handleChange = (e) => { 
+        
+        const {name, type, checked, value} = e.target;
+        
         setTask({
             ...task,
-            [e.target.name]: e.target.value
+            [name]: type === 'checkbox' ? checked : value
         });
     };
 
@@ -27,7 +32,7 @@ const Controlado = () => {
                 name="title" 
                 type="text" 
                 placeholder="Ingrese tarea" 
-                value={task.title} 
+                value={title} 
                 className="form-control mb-2"
                 onChange={handleChange}
             />
@@ -35,7 +40,7 @@ const Controlado = () => {
                 name="description" 
                 className="form-control mb-2" 
                 placeholder="Ingrese descripción" 
-                value={task.description}
+                value={description}
                 onChange={handleChange}
             />
 
@@ -44,15 +49,15 @@ const Controlado = () => {
                 name="priority" 
                 className='form-check-input mb-2' 
                 id="inputCheck"
-                checked={task.priority}
-                onChange={e => setTask({...task, priority: e.target.checked})}
+                checked={priority}
+                onChange={handleChange}
             />
             <label htmlFor="inputCheck" className="ms-2">Dar prioridad</label>
 
             <select 
                 name="state" 
                 className="form-select mb-2" 
-                value={task.state}
+                value={state}
                 onChange={handleChange}
             >
                 <option value="pendiente">Pendiente</option>
