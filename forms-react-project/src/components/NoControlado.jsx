@@ -1,22 +1,30 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const NoControlado = () => {    
 
     const form = useRef(null);
+    const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Enviando formulario...");
-        console.log(form.current);
-        /*
-        const data = {
-            title: e.target.title.value,
-            description: e.target.description.value,
-            state: e.target.state.value
-        };
-        console.log(data);
-        e.target.reset();
-        */
+        setError(''); // Limpia de errores el formulario
+        
+        // Capturar los datos del formulario
+        const data = new FormData(form.current);
+
+        /* spread operator: permite a un elemento iterable ser expandido
+        / copia cada uno de sus elementos
+        / El método Object.fromEntries() transforma una lista de pares con [clave-valor] en un objeto. */
+        const {title, description, state} = Object.fromEntries([...data.entries()]);
+        
+
+        // Validar los datos
+        if (!title.trim() || !description.trim()) {            
+            return setError('Datos incompletos');
+        }
+
+        // Enviar los datos
+        console.log(title, description, state);
     };
 
     return (
@@ -27,7 +35,8 @@ const NoControlado = () => {
                 <option value="pendiente">Pendiente</option>
                 <option value="completado">Competado</option>
             </select>
-            <button className="btn btn-primary" type="submit">Procesar</button>            
+            <button className="btn btn-primary" type="submit">Procesar</button> 
+            {error && <div className="alert alert-danger mt-2">{error}</div>}           
         </form>        
     );
 };
