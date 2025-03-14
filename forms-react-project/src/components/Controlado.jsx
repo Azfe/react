@@ -5,6 +5,7 @@ const Controlado = () => {
     const [task, setTask] = useState({
         title: '',
         description: '',
+        priority: true,
         state: 'pendiente'
     });
 
@@ -37,6 +38,17 @@ const Controlado = () => {
                 value={task.description}
                 onChange={handleChange}
             />
+
+            <input
+                type="checkbox" 
+                name="priority" 
+                className='form-check-input mb-2' 
+                id="inputCheck"
+                checked={task.priority}
+                onChange={e => setTask({...task, priority: e.target.checked})}
+            />
+            <label htmlFor="inputCheck" className="ms-2">Dar prioridad</label>
+
             <select 
                 name="state" 
                 className="form-select mb-2" 
