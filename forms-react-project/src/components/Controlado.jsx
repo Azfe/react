@@ -13,6 +13,13 @@ const Controlado = () => {
         console.log(task.title, description, state);
     };
 
+    const handleChange = (e) => {
+        setTask({
+            ...task,
+            [e.target.name]: e.target.value
+        });
+    };
+
     return (
         <form onSubmit={handleSubmit}>
             <input
@@ -21,20 +28,20 @@ const Controlado = () => {
                 placeholder="Ingrese tarea" 
                 value={task.title} 
                 className="form-control mb-2"
-                onChange={e => setTask({...task, title: e.target.value})}
+                onChange={handleChange}
             />
             <textarea 
                 name="description" 
                 className="form-control mb-2" 
                 placeholder="Ingrese descripción" 
                 value={task.description}
-                onChange={e => setTask({...task, description: e.target.value})}
+                onChange={handleChange}
             />
             <select 
                 name="state" 
                 className="form-select mb-2" 
                 value={task.state}
-                onChange={e => setTask({...task, state: e.target.value})}
+                onChange={handleChange}
             >
                 <option value="pendiente">Pendiente</option>
                 <option value="completado">Competado</option>
