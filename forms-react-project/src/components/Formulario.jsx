@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { useState } from 'react';
 
 const Formulario = () => { 
@@ -13,6 +14,15 @@ const Formulario = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if(!title.trim() || !description.trim()) {
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Título y descripción obligatorios"                
+            });
+        };        
+
         console.log(title, description, state);
     };
 
@@ -64,7 +74,7 @@ const Formulario = () => {
                 <option value="completado">Competado</option>
             </select>
             <button className="btn btn-primary" type="submit">
-                Procesar
+                Agregar tarea
             </button>                     
         </form>        
     );
