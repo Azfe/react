@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2';
 import { useState } from 'react';
 
-const Formulario = () => { 
+const Formulario = ({addTask}) => { 
 
     const [task, setTask] = useState({
         title: '',
@@ -21,13 +21,31 @@ const Formulario = () => {
                 title: "Oops...",
                 text: "Título y descripción obligatorios"                
             });
-        };        
+        };
 
-        console.log(title, description, state);
+        addTask({
+            id: Date.now(),
+            ...task,
+            state: state === 'completado' ? true : false,
+        });
+
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Tarea agregada con éxito",
+            showConfirmButton: false,
+            timer: 1500
+        });
+        /*
+        Swal.fire({
+            title: "Drag me!",
+            icon: "success",
+            draggable: true
+        });
+        */
     };
 
-    const handleChange = (e) => { 
-        
+    const handleChange = (e) => {         
         const {name, type, checked, value} = e.target;
         
         setTask({

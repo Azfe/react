@@ -33,10 +33,18 @@ const App = () => {
 
   const [tasks, setTasks] = useState(initialStateTask);
 
+  const addTask = (task) => {
+    const newTask = {
+      id: tasks.length + 1,
+      ...task
+    }
+    setTasks([...tasks, newTask]);
+  };
+
   return (    
     <div className="container mb-2">
       <h1 className="my-5">Formulario</h1>
-      <Formulario />
+      <Formulario addTask={addTask} />
       <Tasks tasks={tasks} />
       {/* 
       <h1>Formularios</h1>
