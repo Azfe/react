@@ -41,11 +41,16 @@ const App = () => {
     setTasks([...tasks, newTask]);
   };
 
+  const deleteTask = (id) => {
+    const newTasks = tasks.filter(task => task.id !== id);
+    setTasks(newTasks);
+  };
+
   return (    
     <div className="container mb-2">
       <h1 className="my-5">Formulario</h1>
       <Formulario addTask={addTask} />
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} deleteTask={ deleteTask } />
       {/* 
       <h1>Formularios</h1>
       <h2>Formulario no controlado</h2>
