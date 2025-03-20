@@ -26,7 +26,15 @@ const initialStateTask = [
     description: 'Descripcion tarea 3',
     priority: false,
     state: false
+  },
+  {
+    id: 4,
+    title: 'Tarea 4',
+    description: 'Descripcion tarea 4',
+    priority: true,
+    state: false
   }
+
 ];
 
 const App = () => {
@@ -51,11 +59,23 @@ const App = () => {
     setTasks(newTasks);
   }
 
+  const orderTasks = () => {
+    return tasks.sort((a, b) => {
+      if(a.priority === b.priority) return 0;
+      if(a.priority) return -1;
+      if(!a.priority) return 1;      
+    });
+  }
+
   return (    
     <div className="container mb-2">
       <h1 className="my-5">Formulario</h1>
       <Formulario addTask={addTask} />
-      <Tasks tasks={ tasks } deleteTask={ deleteTask } updateTask={ updateTask } />
+      <Tasks 
+        tasks={ orderTasks(tasks) } 
+        deleteTask={ deleteTask } 
+        updateTask={ updateTask } 
+      />
       {/* 
       <h1>Formularios</h1>
       <h2>Formulario no controlado</h2>
