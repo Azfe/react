@@ -1,4 +1,4 @@
-const Task = ({ task, deleteTask }) => {
+const Task = ({ task, deleteTask, updateTask }) => {
 
     const { id, title, description, priority, state } = task;
 
@@ -7,10 +7,10 @@ const Task = ({ task, deleteTask }) => {
             <div className="d-flex justify-content-between align-items-start">
                 <div>
                     <h5 className={`${state && 'text-decoration-line-through'}`}>{title}</h5>
-                    <p className={`${description && 'text-decoration-line-through'}`}>{description}</p>
+                    <p className={`${state && 'text-decoration-line-through'}`}>{description}</p>
                     <div className="d-flex gap-2">
                         <button onClick={() => deleteTask(id)} className="btn btn-sm btn-danger">Eliminar</button>
-                        <button className="btn btn-sm btn-warning">Actualizar</button>
+                        <button onClick={() => updateTask(id)} className="btn btn-sm btn-warning">Actualizar</button>
                     </div>
                 </div>
                 <span className="badge text-bg-primary">

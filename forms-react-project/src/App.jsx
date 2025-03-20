@@ -46,11 +46,16 @@ const App = () => {
     setTasks(newTasks);
   };
 
+  const updateTask = (id) => {
+    const newTasks = tasks.map(task => task.id === id ? {...task, state: !task.state} : task);
+    setTasks(newTasks);
+  }
+
   return (    
     <div className="container mb-2">
       <h1 className="my-5">Formulario</h1>
       <Formulario addTask={addTask} />
-      <Tasks tasks={tasks} deleteTask={ deleteTask } />
+      <Tasks tasks={ tasks } deleteTask={ deleteTask } updateTask={ updateTask } />
       {/* 
       <h1>Formularios</h1>
       <h2>Formulario no controlado</h2>

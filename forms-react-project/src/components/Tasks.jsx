@@ -1,12 +1,12 @@
 import Task from "./Task";
 
-const Tasks = ({tasks, deleteTask}) => {
+const Tasks = ({tasks, deleteTask, updateTask}) => {
   return (
     <div className="mt-4 text-center">
       <h2 className="my-4">Tareas</h2>
       <ul className="list-group">
         {tasks.map(task => (
-          <Task key={task.id} task={task} deleteTask={deleteTask} />
+          <Task key={task.id} task={task} deleteTask={deleteTask} updateTask={updateTask} />
         ))}
         {
           !tasks.length && <li className="list-group-item text-center">No hay tareas</li>
