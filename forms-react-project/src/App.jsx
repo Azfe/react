@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import NoControlado from "./components/NoControlado";
 import Controlado from "./components/Controlado";
 import Formulario from "./components/Formulario";
 import Tasks from "./components/Tasks";
 
-const initialStateTask = [
+/*
+const initialStateTasks = [
   {
     id: 1,
     title: 'Tarea 1',
@@ -34,12 +35,18 @@ const initialStateTask = [
     priority: true,
     state: false
   }
-
 ];
+*/
+
+const initialStateTasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
 
 const App = () => {
 
-  const [tasks, setTasks] = useState(initialStateTask);
+  const [tasks, setTasks] = useState(initialStateTasks);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = (task) => {
     const newTask = {
@@ -85,6 +92,6 @@ const App = () => {
       */}
     </div>
   );
-}
+};
 
 export default App;
