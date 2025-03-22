@@ -3,7 +3,7 @@ import IconCross from "./components/icons/IconCross";
 const App = () => {
   return (
     <>
-      <div className="bg-[url('./src/assets/images/bg-mobile-light.jpg')] bg-no-repeat bg-center bg-cover">
+      <div className="bg-[url('./src/assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat min-h-screen">
         <header className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <h1 className="uppercase text-white text-2xl font-bold tracking-master my-5">Todo</h1>
