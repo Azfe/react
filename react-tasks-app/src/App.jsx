@@ -1,3 +1,5 @@
+import IconCross from "./components/icons/IconCross";
+
 const App = () => {
   return (
     <>
@@ -19,22 +21,28 @@ const App = () => {
           </form>
         </header>
 
-        <main className="container mx-auto px-4">
+        <main className="container mx-auto mt-8 px-4">
           <div className="bg-white rounded-md px-4">
           <article>
             <button className="w-5 h-5 rounded-full border-2 inline-block text-gray-neutral"></button>
             <p className="text-gray-600">Complete online Javascript course</p>
-            <button>exis</button>
+            <button>
+              <IconCross />
+            </button>
           </article>
           <article>
-            <button>Círculo</button>
-            <p>Complete online Javascript course</p>
-            <button>exis</button>
+            <button className="w-5 h-5 rounded-full border-2 inline-block text-gray-neutral"></button>
+            <p className="text-gray-600">Complete online Javascript course</p>
+            <button>
+              <IconCross />
+            </button>
           </article>
           <article>
-            <button>Círculo</button>
-            <p>Complete online Javascript course</p>
-            <button>exis</button>
+            <button className="w-5 h-5 rounded-full border-2 inline-block text-gray-neutral"></button>
+            <p className="text-gray-600">Complete online Javascript course</p>
+            <button>
+              <IconCross />
+            </button>
           </article>
           <section>
             <span>5 items left</span>
