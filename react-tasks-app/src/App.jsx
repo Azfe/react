@@ -3,10 +3,12 @@ const App = () => {
     <>
       <div className="bg-[url('./src/assets/images/bg-mobile-light.jpg')] bg-no-repeat bg-center bg-cover">
         <header className="container mx-auto px-4">
-          <h1 className="uppercase">Todo</h1>
-          <button>
-            Luna
-          </button>
+          <div className="flex justify-between items-center">
+            <h1 className="uppercase text-white text-2xl font-bold tracking-master my-5">Todo</h1>
+            <button>
+              Luna
+            </button>
+          </div>
           <form action="">
             <input type="text" placeholder="Create a new task..."/>
           </form>

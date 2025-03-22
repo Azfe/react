@@ -12,6 +12,7 @@
     --color-avocado-500: oklch(0.84 0.18 117.33);
     --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
     --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+    --tracking-master: 0.3em;
   }
   
   :root {  
