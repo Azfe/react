@@ -1,9 +1,16 @@
 const App = () => {
   return (
-    <div>
-      <h1 className="text-center md:text-right">Tasks</h1>
-      
-    </div>
+    <>
+      <div className="bg-[url('./src/assets/images/bg-mobile-light.jpg')] bg-no-repeat bg-center bg-cover">
+        <h1 className="uppercase">Todo</h1>
+        <button>
+          Luna
+        </button>
+        
+      </div>
+    
+    
+    </>
   );
 };
 
