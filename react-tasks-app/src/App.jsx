@@ -52,13 +52,15 @@ const App = () => {
           </div>          
         </main>
 
-        <section className="container mx-auto px-4">
-          <button>All</button>
-          <button>Active</button>
-          <button>Completed</button>
+        <section className="container mx-auto mt-8 px-4">
+          <div className="flex justify-center gap-4 mt-4 p-4 bg-white rounded-md">
+            <button className="text-blue-600 cursor-pointer">All</button>
+            <button className="hover:text-blue-600 cursor-pointer">Active</button>
+            <button className="hover:text-blue-600 cursor-pointer">Completed</button>
+          </div>
         </section>
 
-        <p className="text-center">Drag and drop to reaorder list</p>
+        <p className="text-center mt-8">Drag and drop to reaorder list</p>
       </div>   
     
     </>
