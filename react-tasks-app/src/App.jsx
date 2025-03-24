@@ -42,13 +42,23 @@ const App = () => {
 
   const [tasks, setTasks] = useState(initialStateTasks);
 
+  const createTask = (title) => {
+    const newTask = {
+      id: Date.now(),
+      title: title.trim(),
+      completed: false,
+    }
+
+    setTasks([...tasks, newTask]);
+  }
+
   return (
     <>
       <div className="bg-[url('./src/assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat min-h-screen">
         <Header />
 
         <main className="container mx-auto mt-8 px-4">
-          <TaskCreate />
+          <TaskCreate createTask={createTask}/>
           <TaskList tasks={tasks} />
           <TaskComputed />
           <TaskFilter />
