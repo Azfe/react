@@ -1,10 +1,47 @@
+import { useState } from "react";
 import Header from "./components/Header";
 import TaskComputed from "./components/TaskComputed";
 import TaskCreate from "./components/TaskCreate";
 import TaskFilter from "./components/TaskFilter";
 import TaskList from "./components/TaskList";
 
+const initialStateTasks = [
+  {
+    id: 1,
+    title: "Complete online JavaScript course",
+    completed: true,
+  },
+  {
+    id: 2,
+    title: "Jog around the park 3x",
+    completed: false,
+  },
+  {
+    id: 3,
+    title: "10 minutes meditation",
+    completed: false,
+  },
+  {
+    id: 4,
+    title: "Read for 1 hour",
+    completed: false,
+  },
+  {
+    id: 5,
+    title: "Pick up groceries",
+    completed: false,
+  },
+  {
+    id: 6,
+    title: "Complete Todo App on Frontend Mentor",
+    completed: false,
+  },
+]
+
 const App = () => {
+
+  const [tasks, setTasks] = useState(initialStateTasks);
+
   return (
     <>
       <div className="bg-[url('./src/assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat min-h-screen">
@@ -12,7 +49,7 @@ const App = () => {
 
         <main className="container mx-auto mt-8 px-4">
           <TaskCreate />
-          <TaskList />
+          <TaskList tasks={tasks} />
           <TaskComputed />
           <TaskFilter />
         </main>
