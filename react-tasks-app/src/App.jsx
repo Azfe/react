@@ -8,18 +8,19 @@ const App = () => {
   return (
     <>
       <div className="bg-[url('./src/assets/images/bg-mobile-light.jpg')] bg-contain bg-no-repeat min-h-screen">
-        
         <Header />
 
-        <main className="container mx-auto mt-8 px-4">         
+        <main className="container mx-auto mt-8 px-4">
           <TaskCreate />
           <TaskList />
           <TaskComputed />
           <TaskFilter />
-        </main>      
+        </main>
 
-        <footer className="text-center mt-8">Drag and drop to reorder list</footer>
-      </div>    
+        <footer className="text-center mt-8">
+          Drag and drop to reorder list
+        </footer>
+      </div>
     </>
   );
 };
