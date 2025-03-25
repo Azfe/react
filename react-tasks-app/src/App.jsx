@@ -19,7 +19,7 @@ const initialStateTasks = [
   {
     id: 3,
     title: "10 minutes meditation",
-    completed: false,
+    completed: true,
   },
   {
     id: 4,

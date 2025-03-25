@@ -1,4 +1,4 @@
-const IconCheck = (...props) => {
+const IconCheck = ({...props}) => {    
     return (
         <svg
             {...props}
@@ -6,9 +6,8 @@ const IconCheck = (...props) => {
             width="11"
             height="9"
         >
-            <path fill="none" stroke="#FFF" stroke-width="2" d="M1 4.304L3.696 7l6-6" />
+            <path fill="none" stroke="#FFF" strokeWidth="2" d="M1 4.304L3.696 7l6-6" />
         </svg>
-
     )
 }
 
