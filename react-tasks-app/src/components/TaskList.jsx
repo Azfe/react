@@ -1,4 +1,3 @@
-import IconCross from "./icons/IconCross";
 import TaskItem from "./TaskItem";
 
 const TaskList = ({tasks}) => {
